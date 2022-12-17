@@ -29,10 +29,7 @@ public class Humans {
         this.gender = gender;
         this.father = null;
         this.mother = null;
-
-
     }
-
     public String getName() {
         return name;
     }
@@ -75,7 +72,6 @@ public class Humans {
     public String printParents() {
         if (father == null || mother == null) {
             return "Нет данных о родителей данного человека";
-
         } else {
             return
                     "Родители данного человека \n" +
