@@ -85,11 +85,11 @@ public class Humans {
     }
 
 
-    public Humans addHomo(Humans homo){
-        if (father == null || mother == null) {
-            return homo = new Humans(this.name,this.gender);}
-        else return homo = new Humans(this.name,this.gender,this.father,this.mother);
-    }
+//    public Humans addHomo(Humans homo){
+//        if (father == null || mother == null) {
+//            return homo = new Humans(this.name,this.gender);}
+//        else return homo = new Humans(this.name,this.gender,this.father,this.mother);
+//    }
 
     }
 

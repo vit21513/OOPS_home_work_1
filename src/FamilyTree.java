@@ -16,7 +16,7 @@ public class FamilyTree {
 
     public void addHuman(Humans hum) {
 
-        famTree.add(hum.addHomo(hum));
+        famTree.add(hum);
 
     }
 
