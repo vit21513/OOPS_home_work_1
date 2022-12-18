@@ -2,29 +2,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Humans {
+public class Human {
 
     private String name;
     private String gender;
-    private Humans father;
-    private Humans mother;
+    private Human father;
+    private Human mother;
 
 
-    private List<Humans> children = new ArrayList<>();
+    private List<Human> children = new ArrayList<>();
 
 
-    public Humans(String name, String gender, Humans father, Humans mother) {
+    public Human(String name, String gender, Human father, Human mother) {
         this.name = name;
         this.gender = gender;
         this.father = father;
         this.mother = mother;
-        father.children.add(this);
-        mother.children.add(this);
+        father_add();
+        mother_add();
+        // father.children.add(this);
+        //  mother.children.add(this);
 
 
     }
 
-    public Humans(String name, String gender) {
+    private   void father_add(){
+       father.children.add(this);
+           }
+
+    private   void mother_add(){
+        mother.children.add(this);
+    }
+
+    public Human(String name, String gender) {
         this.name = name;
         this.gender = gender;
         this.father = null;
@@ -46,18 +56,18 @@ public class Humans {
         this.gender = gender;
     }
 
-    public Humans getFather() {
+    public Human getFather() {
         return father;
     }
 
-    public Humans getMother() {
+    public Human getMother() {
         return mother;
     }
 
 
     public String getChildren() {
         String res ="";
-        for (Humans child : children) {
+        for (Human child : children) {
             res += child + "\n";
         }
         return "Дети этого человека\n " + res;

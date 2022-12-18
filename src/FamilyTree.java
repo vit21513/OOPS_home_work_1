@@ -2,40 +2,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyTree {
-    private List<Humans> famTree;
-    public FamilyTree(List<Humans> Tree) {
+    private List<Human> famTree;
+    public FamilyTree(List<Human> Tree) {
         this.famTree = Tree;
     }
     public FamilyTree() {
         this(new ArrayList<>());
     }
-    public void addHuman(Humans hum) {
+
+    public void addHuman(Human hum) {
         famTree.add(hum);
     }
+
     @Override
     public String toString() {
         String res = "";
-        for (Humans hum : famTree) {
+        for (Human hum : famTree) {
             res += hum + "\n";}
             return res;
     }
     public void printAllTree() {
         System.out.println("Список всех членов дерева");
         String res = "";
-        for (Humans hum : famTree) {
+        for (Human hum : famTree) {
             res += hum + "\n";}
         System.out.println(res);
     }
-    public  Humans findByName(String name){
-        for (Humans hum: famTree) {
+    public Human findByName(String name){
+        for (Human hum: famTree) {
             if ((hum.getName().equals(name))){
                 return hum;}
         }
         return null;
         }
-    public  String findChild (Humans hum) {
+    public  String findChild (Human hum) {
         return hum.getChildren();};
-    public  String findParents (Humans hum) {
+    public  String findParents (Human hum) {
         return hum.printParents();}
 
 

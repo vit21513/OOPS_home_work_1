@@ -2,12 +2,12 @@ public class Main {
     public static void main(String[] args) {
 
         FamilyTree familyTree = new FamilyTree();
-        Humans h1 = new Humans("Ivan", "Male");
-        Humans h2 = new Humans("Ola", "FeMale");
-        Humans h3 = new Humans("Sana", "Male", h1, h2);
-        Humans h4 = new Humans("Kola", "Male", h1, h2);
-        Humans h5 = new Humans("Tana", "FeMale", h1, h2);
-        Humans h6 = new Humans("dasha", "FeMale", h3, h5);
+        Human h1 = new Human("Ivan", "Male");
+        Human h2 = new Human("Ola", "FeMale");
+        Human h3 = new Human("Sana", "Male", h1, h2);
+        Human h4 = new Human("Kola", "Male", h1, h2);
+        Human h5 = new Human("Tana", "FeMale", h1, h2);
+        Human h6 = new Human("dasha", "FeMale", h3, h5);
 
         familyTree.addHuman(h1);
         familyTree.addHuman(h2);
