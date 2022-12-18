@@ -29,9 +29,9 @@ public class Main {
 //        System.out.println(familyTree.findByName("Tana").toString());
 //        System.out.println(familyTree.findChild(familyTree.findByName("Tana")));
 //        System.out.println(familyTree.findParents(familyTree.findByName("Tana")));
-//        familyTree.write_files(familyTree.getFamTree());
-//
-//        System.out.println(familyTree.read_files().toString());
+        familyTree.write_files(familyTree.getFamTree());
+
+        System.out.println(familyTree.read_files().toString());
 
 
     }}
