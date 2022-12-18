@@ -20,8 +20,7 @@ public class Human {
         this.mother = mother;
         father_add();
         mother_add();
-        // father.children.add(this);
-        //  mother.children.add(this);
+
 
 
     }

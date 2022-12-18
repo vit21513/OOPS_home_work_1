@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         FamilyTree familyTree = new FamilyTree();
         Human h1 = new Human("Ivan", "Male");
@@ -16,16 +18,21 @@ public class Main {
         familyTree.addHuman(h5);
         familyTree.addHuman(h6);
 
-        familyTree.printAllTree();
-        System.out.println("Поиск по имени человека ");
-        System.out.println(familyTree.findByName("Ola").toString());
-        System.out.println(familyTree.findChild(familyTree.findByName("Ola")));
-        System.out.println(familyTree.findParents(familyTree.findByName("Ola")));
+//        familyTree.sot();
+//        familyTree.printAllTree();
+//        System.out.println("Поиск по имени человека ");
+//        System.out.println(familyTree.findByName("Ola").toString());
+//        System.out.println(familyTree.findChild(familyTree.findByName("Ola")));
+//        System.out.println(familyTree.findParents(familyTree.findByName("Ola")));
+//        System.out.println(" ");
+//        System.out.println("Поиск по имени человека ");
+//        System.out.println(familyTree.findByName("Tana").toString());
+//        System.out.println(familyTree.findChild(familyTree.findByName("Tana")));
+//        System.out.println(familyTree.findParents(familyTree.findByName("Tana")));
+//        familyTree.write_files(familyTree.getFamTree());
+//
+//        System.out.println(familyTree.read_files().toString());
 
-        System.out.println("Поиск по имени человека ");
-        System.out.println(familyTree.findByName("Tana").toString());
-        System.out.println(familyTree.findChild(familyTree.findByName("Tana")));
-        System.out.println(familyTree.findParents(familyTree.findByName("Tana")));
 
     }}
 

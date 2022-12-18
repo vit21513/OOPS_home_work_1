@@ -1,7 +1,9 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FamilyTree {
+public class FamilyTree implements Serializable {
+
     private List<Human> famTree;
     public FamilyTree(List<Human> Tree) {
         this.famTree = Tree;
@@ -40,21 +42,28 @@ public class FamilyTree {
     public  String findParents (Human hum) {
         return hum.printParents();}
 
+    public List<Human> getFamTree() {
+        return famTree;
+    }
+
+    @Override
+    public String read_files() throws IOException, ClassNotFoundException{
+
+        Serializable work = new Files_working();
+        String temp = work.read_files();
+//         List <Human> temp = new ArrayList<>(work.read_files());
+
+         return temp;
+    }
+
+    @Override
+    public void write_files(List famTree) throws IOException {
+
+        Serializable work = new Files_working();
+        work.write_files(this.famTree);
+
+    }
 
 
 
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
