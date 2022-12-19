@@ -1,33 +1,20 @@
+
 import java.io.*;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.List;
 
-public  class Files_working implements Serializable {
+public class Files_working implements Serializable {
 
-    private Files_working  file_object;
+    public String read_files() throws IOException, ClassNotFoundException {
 
-    public String read_files() throws IOException, ClassNotFoundException{
-
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("backup.txt"));
-
-        String temp =(String) in.readObject();
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("backup"));
+        String temp = (String) in.readObject();
         return temp;
     }
 
-
-
     @Override
-    public void write_files(List array) throws IOException {
+    public void write_files(String result) throws IOException {
 
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("backup.txt"));
-
-        out.writeObject(array.toString());
-
-          out.close();
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("backup"));
+        out.writeObject(result);
+        out.close();
     }
-
 }
-
-
-

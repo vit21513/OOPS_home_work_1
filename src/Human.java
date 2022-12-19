@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Human {
 
     private String name;
@@ -9,9 +8,7 @@ public class Human {
     private Human father;
     private Human mother;
 
-
     private List<Human> children = new ArrayList<>();
-
 
     public Human(String name, String gender, Human father, Human mother) {
         this.name = name;
@@ -21,15 +18,13 @@ public class Human {
         father_add();
         mother_add();
 
-
-
     }
 
-    private   void father_add(){
-       father.children.add(this);
-           }
+    public void father_add() {
+        father.children.add(this);
+    }
 
-    private   void mother_add(){
+    public void mother_add() {
         mother.children.add(this);
     }
 
@@ -39,6 +34,7 @@ public class Human {
         this.father = null;
         this.mother = null;
     }
+
     public String getName() {
         return name;
     }
@@ -63,9 +59,8 @@ public class Human {
         return mother;
     }
 
-
     public String getChildren() {
-        String res ="";
+        String res = "";
         for (Human child : children) {
             res += child + "\n";
         }
@@ -74,26 +69,21 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Имя ='" + name + '\'' +
-                ", Пол ='" + gender + '\'';
+        return "Имя= " + name +
+                ", Пол = " + gender;
     }
 
     public String printParents() {
         if (father == null || mother == null) {
             return "Нет данных о родителей данного человека";
         } else {
-            return
-                    "Родители данного человека \n" +
-                    "Отец = " + father + "\n"+
-                     "Мать = " + mother;
+            return "Родители данного человека\n" +
+                    "Отец = " + father + "," +
+                    "Мать = " + mother;
         }
     }
 
-
-
+    public List<Human> getChildList() {
+        return children;
     }
-
-
-
-
-
+}
