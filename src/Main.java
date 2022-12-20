@@ -21,7 +21,7 @@ public class Main {
 //         familyTree.write_files(familyTree.resToSave()); // запись файла
 
 
-        familyTree.read_files(); // чтение файла
+        familyTree.parsing(familyTree.read_files()); // чтение файла
 
         familyTree.printAllTree();
 
