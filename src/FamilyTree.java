@@ -63,20 +63,6 @@ public class FamilyTree implements Serializable {
 
         Serializable work = new Files_working();
         String temp = work.read_files();
-//        String t = temp.replaceAll("Нет данных о родителей данного человека", "null")
-//                .replaceAll("Родители данного человека\n", "");
-//        String[] array = t.split("!");
-//        for (String i : array) {
-//            String[] arr = i.split(",");
-//            if (arr[2].equals("null")) {
-//                famTree.add(new Human(arr[0].substring(5), arr[1].substring(7)));
-//            } else {
-//                String namfather = arr[2].substring(12);
-//                String namMother = arr[4].substring(12);
-//                famTree.add(new Human(arr[0].substring(5), arr[1].substring(7), findByName(namfather),
-//                        findByName(namMother)));
-//            }
-//        }
         return temp;
     }
 public void  parsing( String temp){
