@@ -65,7 +65,7 @@ public class FamilyTree implements Serializable {
         String temp = work.read_files();
         return temp;
     }
-public void  parsing( String temp){
+     public void  parsing( String temp){
 
         String t = temp.replaceAll("Нет данных о родителей данного человека", "null")
                 .replaceAll("Родители данного человека\n", "");
