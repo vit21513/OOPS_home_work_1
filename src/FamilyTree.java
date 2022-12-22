@@ -1,17 +1,23 @@
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class FamilyTree implements Serializable {
+
+
 
     private List<Human> famTree;
 
-    public FamilyTree(List<Human> Tree) {
-        this.famTree = Tree;
-    }
+   // public FamilyTree(List<Human> Tree) {
+   //     this.famTree = Tree;
+   // }
 
     public FamilyTree() {
-        this(new ArrayList<>());
+        this.famTree =(new ArrayList<>());
+
     }
 
     public void addHuman(Human hum) {
@@ -58,45 +64,23 @@ public class FamilyTree implements Serializable {
         return famTree;
     }
 
-    @Override
-    public String read_files() throws IOException, ClassNotFoundException {
 
-        Serializable work = new Files_working();
-        String temp = work.read_files();
-        return temp;
+    public FamilyTree read() throws IOException, ClassNotFoundException {
+        file_operations work = new Files_working();
+        return  (FamilyTree) work.read_files();
+
     }
-     public void  parsing( String temp){
 
-        String t = temp.replaceAll("Нет данных о родителей данного человека", "null")
-                .replaceAll("Родители данного человека\n", "");
-        String[] array = t.split("!");
-        for (String i : array) {
-            String[] arr = i.split(",");
-            if (arr[2].equals("null")) {
-                famTree.add(new Human(arr[0].substring(5), arr[1].substring(7)));
-            } else {
-                String namfather = arr[2].substring(12);
-                String namMother = arr[4].substring(12);
-                famTree.add(new Human(arr[0].substring(5), arr[1].substring(7), findByName(namfather),
-                        findByName(namMother)));
-            }
+
+
+
+    public void write() throws IOException {
+       file_operations work = new Files_working();
+      work.write_files((Serializable) getFamTree());
         }
 
-
     }
 
 
-    @Override
-    public void write_files(String res) throws IOException {
-        Serializable work = new Files_working();
-        work.write_files(resToSave());
-    }
 
-    public String resToSave() {
-        String res = "";
-        for (Human hum : famTree) {
-            res += (hum.toString() + "," + hum.printParents() + "!");
-        }
-        return res;
-    }
-}
+

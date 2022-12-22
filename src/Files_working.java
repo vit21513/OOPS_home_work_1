@@ -1,20 +1,24 @@
 
 import java.io.*;
 
-public class Files_working implements Serializable {
 
-    public String read_files() throws IOException, ClassNotFoundException {
+public class Files_working implements file_operations {
 
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("backup"));
-        String temp = (String) in.readObject();
-        return temp;
-    }
 
     @Override
-    public void write_files(String result) throws IOException {
+    public FamilyTree read_files() throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("backup"));
+        return (FamilyTree) in.readObject();
+    }
+
+
+
+
+    @Override
+    public void write_files(Serializable homo) throws IOException {
 
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("backup"));
-        out.writeObject(result);
+        out.writeObject(homo);
         out.close();
     }
 }

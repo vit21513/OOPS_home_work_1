@@ -1,5 +1,6 @@
 import java.io.IOException;
-
+import java.io.Serializable;
+import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
@@ -18,11 +19,11 @@ public class Main {
 //         familyTree.addHuman(h4);
 //         familyTree.addHuman(h5);
 //         familyTree.addHuman(h6);
-//         familyTree.write_files(familyTree.resToSave()); // запись файла
+//         familyTree.write(); // запись файла
 
-
-        familyTree.parsing(familyTree.read_files()); // чтение файла
-
+//
+        familyTree.read(); // чтение файла
+//
         familyTree.printAllTree();
 
         System.out.println("Поиск по имени человека ");

@@ -1,7 +1,9 @@
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human {
+public class Human implements Serializable {
 
     private String name;
     private String gender;
@@ -15,6 +17,7 @@ public class Human {
         this.gender = gender;
         this.father = father;
         this.mother = mother;
+       // this.children = new ArrayList<>();
         father_add();
         mother_add();
 
@@ -86,4 +89,8 @@ public class Human {
     public List<Human> getChildList() {
         return children;
     }
+
+
+
 }
+
